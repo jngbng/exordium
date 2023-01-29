@@ -22,8 +22,8 @@
 
 ;;; Enable YAS only for C++
 (add-hook 'c-mode-common-hook
-          '(lambda ()
-             (yas-minor-mode)))
+          #'(lambda ()
+              (yas-minor-mode)))
 
 ;;; Trigger key
 (define-key yas-minor-mode-map (kbd "<tab>") nil)

@@ -41,12 +41,9 @@
 (define-minor-mode flb-mode
   "Frame-local buffer mode. This macro defines both a function
 and variable `flb-mode'."
-  ;; Initial value:
-  nil
-  ;; Indicator for the mode line
-  "FLB"
-  ;; Key bindings (none):
-  nil
+  :init-value nil
+  :lighter "FLB"
+  :keymap nil
   ;; Flags:
   :group 'exordium
   :global t
