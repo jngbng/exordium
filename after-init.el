@@ -112,5 +112,21 @@
 (when (boundp 'scroll-bar-mode)
   (scroll-bar-mode 0))
 
+(add-hook 'lsp-mode-hook
+ (lambda ()
+  (set-face-attribute 'lsp-face-highlight-textual nil :background "#666" :foreground "#ffffff")
+  (set-face-attribute 'lsp-face-highlight-read nil :background "#666" :foreground "#ffff99")
+  (set-face-attribute 'lsp-face-highlight-write nil :background "#666" :foreground "#ff99ff")
+ ))
+
+;; M-, 뒤로가기로 복구
+(define-key c-mode-base-map "\M-," (function rtags-location-stack-back))
+
+;; helm buffer detail 켜기
+(setq helm-buffer-details-flag t)
+
+(use-package ansi-color
+    :hook (compilation-filter . ansi-color-compilation-filter))
+
 (provide 'after-init)
 ;;; after-init.el ends here
