@@ -42,14 +42,17 @@
                      default-frame-alist)))
       (t
        (message "Setting prefs for emacs")
-       (setq exordium-preferred-fonts '(("Monaco"    . 120)
-                                        ("Hack"      . 120)
+       (setq exordium-preferred-fonts '(("Hack"      . 120)
+                                        ("Monaco"    . 120)
                                         ("Consolas"  . 120)
                                         ("Monospace" . 120)
-                                        ("Mono"      . 120)))))
+                                        ("Mono"      . 120)))
+       ;; https://idiocy.org/emacs-fonts-and-fontsets.html
+       (set-fontset-font t 'han "Noto Sans CJK SC")
+       (set-fontset-font t 'kana "Noto Sans CJK JP")
+       (set-fontset-font t 'hangul "Noto Sans CJK KR")
+       (set-fontset-font t 'cjk-misc "Noto Sans CJK KR")))
 
-
-(set-fontset-font t 'hangul (font-spec :family "Noto Sans"))
 
 (setq exordium-lsp-ui-doc-enable nil)
 (setq exordium-lsp-ui-peek-enable nil)
