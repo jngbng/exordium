@@ -31,7 +31,8 @@
   (setq lsp-diagnostic-package :flycheck)
   (setq lsp-flycheck-live-reporting t)
   ;; company mode configuration for lsp-mode
-  (setq lsp-completion-provider :capf)
+  ;; (setq lsp-completion-provider :capf)
+  (setq lsp-completion-provider :none)
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.0)
 
@@ -74,8 +75,9 @@
   :after helm
   :if exordium-helm-everywhere
   :commands helm-xref
-  :config
-  (setq xref-show-xrefs-function 'helm-xref-show-xrefs))
+  ;; :config
+  ;; (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+  )
 
 (use-package helm-lsp
   :after (lsp-mode helm)

@@ -14,7 +14,7 @@
 
 (setq exordium-display-line-numbers nil)
 
-(setq lsp-clangd-version "15.0.6")
+(setq lsp-clangd-version "18.1.3")
 
 (setq exordium-rtags-cmake t)
 
@@ -26,6 +26,8 @@
 (setq exordium-use-magit-fullscreen nil)
 
 (setq exordium-smerge-show-dispatch nil)
+
+(setq exordium-complete-mode nil)
 
 ;; Font
 (cond ((daemonp)
@@ -44,6 +46,19 @@
                                         ("Consolas"  . 120)
                                         ("Monospace" . 120)
                                         ("Mono"      . 120)))))
+
+(setq exordium-lsp-ui-doc-enable nil)
+(setq exordium-lsp-ui-peek-enable nil)
+
+(setq helm-always-two-windows nil)
+
+(setq lsp-headerline-breadcrumb-enable nil)
+
+;; M-C-l switch back and forth between the 2 top buffers
+
+;; auto complete 가 helm이랑 연계되면서 망가졌다. 일단 시그니처 자동으로 띄우는거 끔.
+;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+(setq lsp-signature-auto-activate nil) ;; you could manually request them via `lsp-signature-activate`
 
 (provide 'prefs)
 ;;; prefs.el ends here
