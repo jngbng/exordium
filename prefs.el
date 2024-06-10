@@ -14,7 +14,7 @@
 
 (setq exordium-display-line-numbers nil)
 
-(setq lsp-clangd-version "15.0.6")
+(setq lsp-clangd-version "18.1.3")
 
 (setq exordium-rtags-cmake t)
 
