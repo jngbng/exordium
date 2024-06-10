@@ -62,9 +62,11 @@
   (interactive)
   (other-window -1))
 
-(global-set-key (kbd "C->") 'other-window)
-(global-set-key (kbd "C-<") 'other-window-reverse)
+;; (global-set-key (kbd "C->") 'other-window)
+;; (global-set-key (kbd "C-<") 'other-window-reverse)
 
+(global-set-key (kbd "C->") 'next-multiframe-window)
+(global-set-key (kbd "C-<") 'previous-multiframe-window)
 
 ;;; C-[ 세번 누르면 ESC 새번 누른 것과 같은 효과인데, keyboard-escape-quit가 실행되면서 프레임 분할이 다 꺼짐. 짜증나니 없애버림.
 (global-unset-key (kbd "M-ESC ESC"))
@@ -117,6 +119,15 @@
   (set-face-attribute 'lsp-face-highlight-textual nil :background "#666" :foreground "#ffffff")
   (set-face-attribute 'lsp-face-highlight-read nil :background "#666" :foreground "#ffff99")
   (set-face-attribute 'lsp-face-highlight-write nil :background "#666" :foreground "#ff99ff")
+
+  (setq lsp-enable-on-type-formatting nil)
+  (setq lsp-idle-delay 1)
+
+  ;; disable cursor hover
+  (setq lsp-ui-doc-show-with-mouse nil)
+  (setq lsp-ui-doc-show-with-cursor nil)
+
+  (setq lsp-log-io nil)
  ))
 
 ;; M-, 뒤로가기로 복구
@@ -127,6 +138,23 @@
 
 (use-package ansi-color
     :hook (compilation-filter . ansi-color-compilation-filter))
+
+;; C-x h -> 전체 선택
+;; C-u M-| => 외부 커맨드 (파이프)
+;; xmllint --format - RET => - 로 stdin
+
+;; (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+
+;; which-key 기능 짜증남. 수동으로 켜도록 설정
+
+;; Allow C-h to trigger wich-key before it is done automatically
+(setq which-key-show-early-on-C-h t)
+;; make sure which-key doesn't show normally but refreshes quickly after it is triggered.
+(setq which-key-idle-delay 10000)
+(setq which-key-idle-secondary-delay 0.05)
+
+;; init-lsp.el 에서 :capf로 설정하고, lsp가 버전 올라가면서 none이 아니고 company-mode가 있으면 활성화 해버린다.
+(setq lsp-completion-provider :none)
 
 (provide 'after-init)
 ;;; after-init.el ends here
