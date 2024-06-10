@@ -41,9 +41,12 @@
       (t
        (message "Setting prefs for emacs")
        (setq exordium-preferred-fonts '(("Monaco"    . 120)
+                                        ("Hack"      . 120)
                                         ("Consolas"  . 120)
                                         ("Monospace" . 120)
                                         ("Mono"      . 120)))))
+
+(set-fontset-font t 'hangul (font-spec :family "Noto Sans"))
 
 (provide 'prefs)
 ;;; prefs.el ends here
