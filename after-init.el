@@ -156,5 +156,9 @@
 ;; init-lsp.el 에서 :capf로 설정하고, lsp가 버전 올라가면서 none이 아니고 company-mode가 있으면 활성화 해버린다.
 (setq lsp-completion-provider :none)
 
+;; python-mode 에서 forward-sexp하면 단어 단위가 아니라 expression 끝으로 가서 귀찮다.
+(add-hook 'python-mode-hook
+          (lambda () (setq forward-sexp-function nil)))
+
 (provide 'after-init)
 ;;; after-init.el ends here
