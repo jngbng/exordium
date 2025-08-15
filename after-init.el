@@ -132,7 +132,7 @@
  ))
 
 ;; M-, 뒤로가기로 복구
-(define-key c-mode-base-map "\M-," (function rtags-location-stack-back))
+;; (define-key c-mode-base-map "\M-," (function rtags-location-stack-back))
 
 ;; helm buffer detail 켜기
 (setq helm-buffer-details-flag t)
