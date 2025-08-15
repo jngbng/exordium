@@ -65,6 +65,7 @@
 ;; (global-set-key (kbd "C->") 'other-window)
 ;; (global-set-key (kbd "C-<") 'other-window-reverse)
 
+(unbind-key "C->" c-mode-base-map)
 (global-set-key (kbd "C->") 'next-multiframe-window)
 (global-set-key (kbd "C-<") 'previous-multiframe-window)
 
