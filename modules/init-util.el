@@ -222,7 +222,7 @@ When called with ARG, do this that many times."
   (interactive "*")
   (delete-region (point) (progn (skip-chars-forward " \t") (point))))
 
-(bind-key "C-\\" #'delete-horizontal-space-forward)
+;; (bind-key "C-\\" #'delete-horizontal-space-forward)
 
 (defun delete-horizontal-space-backward ()
   "Delete all spaces and tabs before point."
@@ -393,8 +393,8 @@ buffer."
                               (string-prefix-p prefix buffer-name))))
       (equal (point-min) (point-max))
       (yes-or-no-p
-	   (format "Buffer %S has not been written to a file; kill it? "
-		       (buffer-name (current-buffer))))))
+       (format "Buffer %S has not been written to a file; kill it? "
+               (buffer-name (current-buffer))))))
 
 (add-hook 'kill-buffer-query-functions
           #'exordium--scratch-kill-buffer-query-function)
