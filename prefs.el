@@ -18,11 +18,6 @@
 
 (setq lsp-clangd-version "18.1.3")
 
-(setq exordium-rtags-cmake t)
-
-;; build 디렉토리 만들 때 -DCMAKE_EXPORT_COMPILE_COMMANDS=1 옵션 줘야 한다. 알아서 안되나?
-(setq exordium-rtags-cmake-build-dir "build")
-
 (setq exordium-enable-electric-pair-mode nil)
 
 (setq exordium-use-magit-fullscreen nil)
