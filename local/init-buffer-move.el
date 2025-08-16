@@ -3,7 +3,7 @@
 
 ;;; Code:
 (use-package buffer-move
-  :ensure nil
+  :defer t
   :bind
   (:map global-map
         ("C-M-{" . 'buf-move-up)
