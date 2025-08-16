@@ -2,20 +2,22 @@
 
 ;;; M-x all-the-icons-install-fonts
 
+(message "***** after_init.el ****")
+
 ;;; buffer-move
-(use-package init-buffer-move :ensure nil)
+(exordium-require 'init-buffer-move :location "local")
 
-(use-package init-rect-mark :ensure nil)
+(exordium-require 'init-rect-mark :location "local")
 
-(use-package init-eshell-toggle :ensure nil)
+(exordium-require 'init-eshell-toggle :location "local")
 
-(use-package init-korean :ensure nil)
+(exordium-require 'init-korean :location "local")
 
-(use-package init-editorconfig :ensure nil)
+(exordium-require 'init-editorconfig :location "local")
 
-(use-package init-ffip :ensure nil)
+(exordium-require 'init-ffip :location "local")
 
-(use-package init-jbseo :ensure nil)
+(exordium-require 'init-jbseo :location "local")
 
 (use-package helm-ls-git)
 
