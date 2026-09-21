@@ -23,6 +23,8 @@
 
 (exordium-require 'init-zig :location "local")
 
+(exordium-require 'init-agent-shell :location "local")
+
 (use-package helm-ls-git)
 
 ;; grep 에서 헤더 없에기
@@ -47,7 +49,8 @@
 (global-set-key [remap ibuffer] 'helm-buffers-list)
 (global-set-key (kbd "C-x C-p") 'helm-browse-project)
 
-
+;; agent-shell
+(global-set-key (kbd "C-x q") 'agent-shell)
 
 (defun up-down-case-char ()
   ;; mark & get cursor-char
