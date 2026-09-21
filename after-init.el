@@ -19,6 +19,8 @@
 
 (exordium-require 'init-jbseo :location "local")
 
+(exordium-require 'rainbow-csv :location "local")
+
 (use-package helm-ls-git)
 
 ;; grep 에서 헤더 없에기
