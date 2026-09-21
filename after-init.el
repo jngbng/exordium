@@ -206,5 +206,8 @@
                          (file-name-directory lsp-clangd-binary-path)))))
       (add-to-list 'lsp-clients-clangd-library-directories clangd-root))))
 
+;; C-x b (switch-to-buffer) 에서 파일 이름이 짤려 보인다. nil이 동작을 이상하게 하는 듯.
+(setq helm-buffer-max-length 40)
+
 (provide 'after-init)
 ;;; after-init.el ends here
