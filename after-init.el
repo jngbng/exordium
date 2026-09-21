@@ -131,6 +131,8 @@
   (setq lsp-ui-doc-show-with-cursor nil)
 
   (setq lsp-log-io nil)
+
+  (local-set-key (kbd "C-c C-?") 'lsp-ui-doc-glance)
  ))
 
 ;; M-, 뒤로가기로 복구
