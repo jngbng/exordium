@@ -69,5 +69,8 @@
 ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (setq lsp-signature-auto-activate nil) ;; you could manually request them via `lsp-signature-activate`
 
+;; dap-tooltip-mode 끄고 싶다.
+(setq lsp-enable-dap-auto-configure nil)
+
 (provide 'prefs)
 ;;; prefs.el ends here
