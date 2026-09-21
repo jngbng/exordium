@@ -36,7 +36,12 @@
                        (left   . 50)
                        (width  . 110)
                        (height . 71))
-                     default-frame-alist)))
+                     default-frame-alist))
+       (setq exordium-preferred-fonts '(("Hack"      . 120)
+                                        ("Monaco"    . 120)
+                                        ("Consolas"  . 120)
+                                        ("Monospace" . 120)
+                                        ("Mono"      . 120))))
       (t
        (message "Setting prefs for emacs")
        (setq exordium-preferred-fonts '(("Hack"      . 120)
