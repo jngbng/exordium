@@ -21,6 +21,8 @@
 
 (exordium-require 'rainbow-csv :location "local")
 
+(exordium-require 'init-zig :location "local")
+
 (use-package helm-ls-git)
 
 ;; grep 에서 헤더 없에기
