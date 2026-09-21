@@ -14,7 +14,7 @@
 
 (setq exordium-display-line-numbers nil)
 
-(setq exordium-help-extensions nil)
+;; (setq exordium-help-extensions nil)
 
 (setq lsp-clangd-version "21.1.8")
 
