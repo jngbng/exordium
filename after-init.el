@@ -152,7 +152,7 @@
 
 ;; which-key 기능 짜증남. 수동으로 켜도록 설정
 
-;; Allow C-h to trigger wich-key before it is done automatically
+;; Allow C-h to trigger which-key before it is done automatically
 (setq which-key-show-early-on-C-h t)
 ;; make sure which-key doesn't show normally but refreshes quickly after it is triggered.
 (setq which-key-idle-delay 10000)
