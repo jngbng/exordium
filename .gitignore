@@ -65,3 +65,6 @@ request/
 /forge-database-*.sqlite
 /projects
 /multisession/
+
+# auto backup file
+*~
