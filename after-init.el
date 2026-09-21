@@ -163,5 +163,16 @@
 (add-hook 'python-mode-hook
           (lambda () (setq forward-sexp-function nil)))
 
+
+;; prefs.el에서 lsp-clangd-version 를 설정해도 여전히 global clangd를 쓰는 문제 수정
+(with-eval-after-load 'lsp-clangd
+  (when (file-executable-p lsp-clangd-binary-path)
+    (setq lsp-clients-clangd-executable lsp-clangd-binary-path)
+
+    (let ((clangd-root (file-name-directory
+                        (directory-file-name
+                         (file-name-directory lsp-clangd-binary-path)))))
+      (add-to-list 'lsp-clients-clangd-library-directories clangd-root))))
+
 (provide 'after-init)
 ;;; after-init.el ends here

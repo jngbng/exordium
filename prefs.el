@@ -16,7 +16,7 @@
 
 (setq exordium-help-extensions nil)
 
-(setq lsp-clangd-version "18.1.3")
+(setq lsp-clangd-version "21.1.8")
 
 (setq exordium-enable-electric-pair-mode nil)
 
