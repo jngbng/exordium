@@ -161,6 +161,36 @@
 ;; init-lsp.el 에서 :capf로 설정하고, lsp가 버전 올라가면서 none이 아니고 company-mode가 있으면 활성화 해버린다.
 (setq lsp-completion-provider :none)
 
+;;; Switch between .h <--> .inl.h / .hpp
+
+(defconst exordium-cpp-header-switches
+  '(("t.cpp"   . ("h" "cpp"))
+    ("g.cpp"   . ("h" "cpp"))
+    ("u.t.cpp" . ("h" "cpp"))
+    ("i.t.cpp" . ("h" "cpp"))
+    ("h"       . ("cpp" "cc" "t.cpp" "g.cpp" "u.t.cpp" "i.t.cpp" "c" "hpp" "inl.h"))
+    ("hpp"     . ("cpp" "cc" "t.cpp" "g.cpp" "u.t.cpp" "i.t.cpp" "c" "h"))
+    ("inl.h"   . ("cpp" "cc" "t.cpp" "g.cpp" "u.t.cpp" "i.t.cpp" "c" "h"))
+    ("cpp"     . ("h" "hpp" "t.cpp" "g.cpp" "u.t.cpp" "i.t.cpp"))
+    ("cc"      . ("h" "hpp" "t.cc" "u.t.cc" "i.t.cc"))
+    ("c"       . ("h")))
+  "A-list of extension -> list of matching extensions.")
+
+(defun bde-file-name-extension (file-name)
+  "Like `file-name-extension' respecting a BDE-style test driver infixes."
+  (cond ((string-suffix-p ".u.t.cpp" file-name)
+         "u.t.cpp")
+        ((string-suffix-p ".i.t.cpp" file-name)
+         "i.t.cpp")
+        ((string-suffix-p ".t.cpp" file-name)
+         "t.cpp")
+        ((string-suffix-p ".g.cpp" file-name)
+         "g.cpp")
+        ((string-suffix-p ".inl.h" file-name)
+         "inl.h")
+        (t
+         (file-name-extension file-name))))
+
 ;; python-mode 에서 forward-sexp하면 단어 단위가 아니라 expression 끝으로 가서 귀찮다.
 (add-hook 'python-mode-hook
           (lambda () (setq forward-sexp-function nil)))
