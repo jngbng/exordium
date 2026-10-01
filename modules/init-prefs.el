@@ -618,6 +618,11 @@ Default is to choose the first that is found via `executable-find'."
   :group 'exordium
   :type  'boolean)
 
+(defcustom exordium-enable-casual nil
+  "If t, casual mode will be enabled."
+  :group 'exordium
+  :type  'boolean)
+
 (defcustom exordium-lsp-ui-doc-enable t
   "If t, exordium-lsp-ui-doc mode will be enabled."
   :group 'exordium
