@@ -216,6 +216,15 @@
 ;; C-x b (switch-to-buffer) 에서 파일 이름이 짤려 보인다. nil이 동작을 이상하게 하는 듯.
 (setq helm-buffer-max-length 40)
 
+(with-eval-after-load 'forge
+  (setq auth-sources '("~/.authinfo"))
+  (add-to-list 'ghub-insecure-hosts "gitlab.snjlab.iso")
+  (add-to-list 'forge-alist
+               '("gitlab.snjlab.iso"  ; GITHOST
+                 "gitlab.snjlab.iso/api/v4"  ; APIHOST
+                 "gitlab.snjlab.iso"  ; WEBHOST and INSTANCE_ID
+                 forge-gitlab-repository)))
+
 (unless exordium-treesit-modes-enable
   (setq font-lock-maximum-decoration
         '((c++-mode . 2)
