@@ -54,4 +54,29 @@ even beep.)"
           (message "Deleted file %s" filename)
           (kill-buffer))))))
 
+(defun jbseo/quit-compilation-window ()
+  "Bury/close the *compilation* window(s) without leaving the selected window."
+  (interactive)
+  (when (get-buffer "*compilation*")
+    (quit-windows-on "*compilation*")))
+
+(defun jbseo/open-merge-request-url ()
+  (interactive)
+  (let* ((push-remote (or (magit-get-push-remote)
+                          (car (magit-list-remotes))
+                          "origin"))
+         (target-url (format "http://gitlab.snjlab.iso/%s/-/merge_requests/new?merge_request%%5Bsource_branch%%5D=%s"
+                             (replace-regexp-in-string
+                              "\\`.+gitlab\\.snjlab\\.iso:\\(.+\\)\\.git\\'"
+                              "\\1"
+                              (magit-get "remote"
+                                         push-remote
+                                         "url"))
+                             (magit-get-current-branch))))
+    (browse-url target-url)))
+
+(eval-after-load 'magit
+  '(define-key magit-mode-map "v"
+               #'jbseo/open-merge-request-url))
+
 (provide 'init-jbseo)
