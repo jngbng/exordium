@@ -6,6 +6,8 @@
 
 (setq exordium-spell-check nil)
 
+(setq exordium-treesit-modes-enable t)
+
 ;; 한/영이랑 인코딩 설정등이 안보임. 어떻게 고치나?
 (setq exordium-enable-powerline nil)
 

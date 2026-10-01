@@ -216,5 +216,10 @@
 ;; C-x b (switch-to-buffer) 에서 파일 이름이 짤려 보인다. nil이 동작을 이상하게 하는 듯.
 (setq helm-buffer-max-length 40)
 
+(unless exordium-treesit-modes-enable
+  (setq font-lock-maximum-decoration
+        '((c++-mode . 2)
+          (t . t))))
+
 (provide 'after-init)
 ;;; after-init.el ends here
