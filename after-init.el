@@ -5,25 +5,25 @@
 (message "***** after_init.el ****")
 
 ;;; buffer-move
-(exordium-require 'init-buffer-move :location "local")
+(exordium-require 'init-buffer-move :location "modules_jbseo")
 
-(exordium-require 'init-rect-mark :location "local")
+(exordium-require 'init-rect-mark :location "modules_jbseo")
 
-(exordium-require 'init-eshell-toggle :location "local")
+(exordium-require 'init-eshell-toggle :location "modules_jbseo")
 
-(exordium-require 'init-korean :location "local")
+(exordium-require 'init-korean :location "modules_jbseo")
 
-(exordium-require 'init-editorconfig :location "local")
+(exordium-require 'init-editorconfig :location "modules_jbseo")
 
-(exordium-require 'init-ffip :location "local")
+(exordium-require 'init-ffip :location "modules_jbseo")
 
-(exordium-require 'init-jbseo :location "local")
+(exordium-require 'init-jbseo :location "modules_jbseo")
 
-(exordium-require 'rainbow-csv :location "local")
+(exordium-require 'rainbow-csv :location "modules_jbseo")
 
-(exordium-require 'init-zig :location "local")
+(exordium-require 'init-zig :location "modules_jbseo")
 
-(exordium-require 'init-agent-shell :location "local")
+(exordium-require 'init-agent-shell :location "modules_jbseo")
 
 (use-package helm-ls-git)
 
