@@ -126,9 +126,9 @@
 
 (add-hook 'lsp-mode-hook
  (lambda ()
-  (set-face-attribute 'lsp-face-highlight-textual nil :background "#666" :foreground "#ffffff")
-  (set-face-attribute 'lsp-face-highlight-read nil :background "#666" :foreground "#ffff99")
-  (set-face-attribute 'lsp-face-highlight-write nil :background "#666" :foreground "#ff99ff")
+  ;; (set-face-attribute 'lsp-face-highlight-textual nil :background "#666" :foreground "#ffffff")
+  ;; (set-face-attribute 'lsp-face-highlight-read nil :background "#666" :foreground "#ffff99")
+  ;; (set-face-attribute 'lsp-face-highlight-write nil :background "#666" :foreground "#ff99ff")
 
   (setq lsp-enable-on-type-formatting nil)
   (setq lsp-idle-delay 1)

@@ -167,7 +167,7 @@ names to which it refers are bound."
      (cursor ((t (:background ,red))))
      (fringe ((t (:background ,current-line))))
      (hl-line ((t (:background ,current-line :inherit nil))))
-     (highlight ((t (:background ,green :foreground ,background)))) ;+:foreground
+     (highlight ((t (:background "darkolivegreen"))))
 
      (border ((t (:background ,current-line))))
      (border-glyph ((t (nil))))
